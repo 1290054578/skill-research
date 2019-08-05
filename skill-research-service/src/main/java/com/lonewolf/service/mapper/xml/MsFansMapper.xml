@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lonewolf.service.mapper.MsFansMapper">
+
+    <!-- 分页查询粉丝表信息 -->
+    <select id="listPageFansInfo" parameterType="com.lonewolf.service.vo.MsFansVO" resultType="com.lonewolf.service.model.MsFansDO">
+        SELECT * FROM ms_fans
+        WHERE 1=1
+        <if test="msFansVO.phone != null and msFansVO.phone != ''">
+            phone = #{msFansVO.phone}
+        </if>
+    </select>
+
+    <!-- 统计粉丝表总数 -->
+    <select id="countMsFans" resultType="int" parameterType="com.lonewolf.service.vo.MsFansVO">
+        SELECT COUNT(1) FROM ms_fans
+        <if test="msFansVO.phone != null and msFansVO.phone != ''">
+            phone = #{msFansVO.phone}
+        </if>
+    </select>
+</mapper>
