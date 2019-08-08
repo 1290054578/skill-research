@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="skill-research-api" />
         <module name="skill-research-service" />
+        <module name="skill-research-tool" />
         <module name="skill-research-web" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="skill-research" options="-parameters" />
       <module name="skill-research-api" options="-parameters" />
       <module name="skill-research-service" options="-parameters" />
+      <module name="skill-research-tool" options="-parameters" />
       <module name="skill-research-web" options="-parameters" />
     </option>
   </component>

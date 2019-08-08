@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/skill-research-service/pom.xml" />
         <option value="$PROJECT_DIR$/skill-research-api/pom.xml" />
         <option value="$PROJECT_DIR$/skill-research-web/pom.xml" />
+        <option value="$PROJECT_DIR$/skill-research-tool/pom.xml" />
       </list>
     </option>
   </component>
