@@ -6,9 +6,19 @@ package com.lonewolf.web;
  * @Description:
  */
 public class test {
+
+        /**
+         * 中文计数
+         */
         static char[] numArr = {'零','一','二','三','四','五','六','七','八','九'};
+        /**
+         * 阿拉伯数字
+         */
         static char[] numIntArr = {'0','1','2','3','4','5','6','7','8','9'};
-        static String[] unitArr = {"零","十","百","千","万","亿"};
+        /**
+         * 数位
+         */
+        static String[] unitArr = {"","十","百","千","万","亿"};
 
         public static String numToChinese(int num) {
             char[] newNum = String.valueOf(num).toCharArray();
@@ -16,37 +26,42 @@ public class test {
 
             StringBuffer res = new StringBuffer();
 
-            int k = len%4;
-            int z = 3;
-            if(k!=0){
-                z = k-1;
-            }
-            int m =0;
+            //以千为轮回坐标，计算轮回次数向上取整，计算数字最高数位下标
             int d = (int)Math.ceil((double) len/4)+2;
+            //以千为轮回，取余数字最高数位的数字数量
+            int k = len%4;
+            //轮巡次数为整数，从千位取值，否则从实际取数位值
+            int z = 0 == k ? 3 : k-1;
+            //记录0连续出现的次数
+            int m =0;
+
             for(int i=0;i<len;i++) {
                 int c = 0;
+                //对比入参数字与给定数字，获取下标位置
                 while(numIntArr[c] != newNum[i]){
                     c++;
                 }
-                if(numIntArr[c]=='0'){
-                    m++;
-                }else{
-                    m=0;
-                }
 
+                //判断0连续出现次数
+                m = '0' == numIntArr[c]? m+1 : 0;
+
+                //位数为0或者连续零不读写，其他情况读数（读入参数）
                 if((i!=(len-1)&&m<=1)||m==0){
                     res.append(numArr[c]);
                 }
 
+                //（为数字加上数位）
+                // 以千为轮回，取余为0时，加上轮回数位
                 if((len-i-1)%4==0&&i!=(len-1)){
                     //向上取整
                     res.append(unitArr[d]);
                     d--;
                     z=3;
-                }else if(z!=0 && numIntArr[c]!='0'){
-                    res.append(unitArr[z]);
+                } else if(numIntArr[c]=='0'){
+                    //数字0后，不加数位值
                     z--;
                 }else{
+                    res.append(unitArr[z]);
                     z--;
                 }
 
