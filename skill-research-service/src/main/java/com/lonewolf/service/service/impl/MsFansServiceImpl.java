@@ -9,10 +9,8 @@ import com.lonewolf.service.mapper.MsFansMapper;
 import com.lonewolf.service.model.MsFansDO;
 import com.lonewolf.service.service.IMsFansService;
 import com.lonewolf.service.vo.MsFansVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 
 /**
  * <p>
@@ -34,12 +32,14 @@ public class MsFansServiceImpl extends ServiceImpl<MsFansMapper, MsFans> impleme
      */
     @Override
     public IPage<MsFansDO> listPageFansInfo(MsFansVO msFansVO) {
-        Page<MsFansVO> page = new Page<>(msFansVO.getCurrent(),msFansVO.getPageSize());
-        //不使用mybatis-plus的sql注入进行总数查询，数据量多会很慢
-        page.setSearchCount(false);
-        IPage iPage = this.baseMapper.listPageFansInfo(page,msFansVO);
+        Page page = new Page(msFansVO.getCurrent(),msFansVO.getPageSize());
 
-        iPage.setTotal(this.baseMapper.countMsFans(msFansVO));
+        //不使用mybatis-plus的sql注入进行总数查询，数据量多会很慢
+     //   page.setSearchCount(false);
+        IPage<MsFansDO> iPage = this.baseMapper.listPageFansInfo(page,msFansVO);
+
+     //   iPage.setTotal(this.baseMapper.countMsFans(msFansVO));
+   //   IPage iPage = this.baseMapper.selectPage(page,null);
 
         return iPage;
     }

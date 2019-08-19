@@ -7,6 +7,7 @@ import com.lonewolf.service.service.IMsFansService;
 import com.lonewolf.service.vo.MsFansVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -38,8 +39,11 @@ public class MsFansController {
      * @date 2019-08-05 15:28
      */
     @ApiOperation(value = "分页查询粉丝信息",notes = "分页查询会员粉丝信息s")
-    @PostMapping("query")
-    public IPage<MsFansDO> listFansInfo(@Valid @ModelAttribute MsFansVO msFansVO){
+    @GetMapping("query")
+    public IPage<MsFansDO> listFansInfo(@Valid @ModelAttribute MsFansVO msFansVO, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return null;
+        }
         return iMsFansService.listPageFansInfo(msFansVO);
     }
 
