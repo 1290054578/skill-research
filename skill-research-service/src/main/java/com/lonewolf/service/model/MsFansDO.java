@@ -1,12 +1,14 @@
 package com.lonewolf.service.model;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * @Author: Xiangyong.zeng
  * @Date: 2019-08-05 15:28
  * @Description:
  */
+@Data
 public class MsFansDO {
 
     /**

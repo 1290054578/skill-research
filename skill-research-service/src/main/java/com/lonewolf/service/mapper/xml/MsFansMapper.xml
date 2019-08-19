@@ -7,7 +7,7 @@
         SELECT * FROM ms_fans
         WHERE 1=1
         <if test="msFansVO.phone != null and msFansVO.phone != ''">
-            phone = #{msFansVO.phone}
+            phone = #{phone}
         </if>
     </select>
 
