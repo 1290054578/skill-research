@@ -1,9 +1,8 @@
-package com.lonewolf.service.factory.abstractfactory.store;
+package com.lonewolf.service.pattern.factory.abstractfactory.store;
 
-import com.lonewolf.service.factory.abstractfactory.pizzafactory.CSPizzaFactory;
-import com.lonewolf.service.factory.abstractfactory.PizzaStore;
-import com.lonewolf.service.factory.abstractfactory.entity.Pizza;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lonewolf.service.pattern.factory.abstractfactory.pizzafactory.CSPizzaFactory;
+import com.lonewolf.service.pattern.factory.abstractfactory.PizzaStore;
+import com.lonewolf.service.pattern.factory.abstractfactory.entity.Pizza;
 
 /**
  * @Author: Xiangyong.zeng

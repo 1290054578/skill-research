@@ -1,4 +1,4 @@
-package com.lonewolf.service.factory.simplefactory.entity;
+package com.lonewolf.service.pattern.factory.simplefactory.entity;
 
 /**
  * @Author: Xiangyong.zeng

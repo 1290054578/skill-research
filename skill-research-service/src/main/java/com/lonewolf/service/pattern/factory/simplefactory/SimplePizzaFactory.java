@@ -1,8 +1,8 @@
-package com.lonewolf.service.factory.simplefactory;
+package com.lonewolf.service.pattern.factory.simplefactory;
 
-import com.lonewolf.service.factory.simplefactory.entity.ChessePizza;
-import com.lonewolf.service.factory.simplefactory.entity.Pizza;
-import com.lonewolf.service.factory.simplefactory.enumtool.PizzaEnum;
+import com.lonewolf.service.pattern.factory.simplefactory.entity.ChessePizza;
+import com.lonewolf.service.pattern.factory.simplefactory.entity.Pizza;
+import com.lonewolf.service.pattern.factory.simplefactory.enumtool.PizzaEnum;
 
 /**
  * @Author: Xiangyong.zeng

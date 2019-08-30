@@ -1,6 +1,6 @@
-package com.lonewolf.service.factory.simplefactory;
+package com.lonewolf.service.pattern.factory.simplefactory;
 
-import com.lonewolf.service.factory.simplefactory.entity.Pizza;
+import com.lonewolf.service.pattern.factory.simplefactory.entity.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

@@ -1,7 +1,7 @@
-package com.lonewolf.service.factory.abstractfactory.service;
+package com.lonewolf.service.pattern.factory.abstractfactory.service;
 
 
-import com.lonewolf.service.factory.abstractfactory.entity.Pizza;
+import com.lonewolf.service.pattern.factory.abstractfactory.entity.Pizza;
 
 /**
  * @Author: Xiangyong.zeng

@@ -1,6 +1,4 @@
-package com.lonewolf.service.factory.simplefactory.enumtool;
-
-import io.swagger.models.auth.In;
+package com.lonewolf.service.pattern.factory.simplefactory.enumtool;
 
 /**
  * @Author: Xiangyong.zeng
